@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aman Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .light-mode .navbar {
+            background-color: #fff;
+        }
+
+        .light-mode .navbar a {
+            color: #333;
+        }
+
+        .light-mode .btn {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .light-mode .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 16px;
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: #00c4cc;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #333;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #00c4cc;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="mode-toggle" id="mode-toggle">🌙</button>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to discuss a project or hire me, feel free to reach out!</p>
+        <a href="mailto:k.amanknp@gmail.com" class="btn">Get in Touch</a>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-github" target="_blank">GitHub</a>
+            <a href="https://twitter.com/your-twitter" target="_blank">Twitter</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Aman Kumar. All Rights Reserved.</p>
+    </div>
+
+    <!-- Mode Toggle Script -->
+    <script>
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        // Check for the saved theme in localStorage
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            modeToggle.innerHTML = '☀️';  // Sun icon for light mode
+        } else {
+            body.classList.remove('light-mode');
+            modeToggle.innerHTML = '🌙';  // Moon icon for dark mode
+        }
+
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                modeToggle.innerHTML = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                modeToggle.innerHTML = '🌙';
+            }
+        });
+    </script>
+
+</body>
+</html>
