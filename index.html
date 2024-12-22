@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Kumar | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .light-mode .navbar {
+            background-color: #fff;
+        }
+
+        .light-mode .navbar a {
+            color: #333;
+        }
+
+        .light-mode .btn {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .light-mode .btn:hover {
+            background-color: #005bb5;
+        }
+
+        .light-mode .mode-toggle {
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 16px;
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: #00c4cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url('img/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h3 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out 0.5s;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out 1s;
+        }
+
+        .hero .btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            background-color: #00c4cc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #009999;
+        }
+
+        /* Hero Image */
+        .hero .profile-img {
+            border-radius: 50%;
+            margin-top: 30px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #fff;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+        /* Dark mode styles */
+        .mode-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="mode-toggle" id="mode-toggle">🌙</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Aman Kumar</h1>
+        <h3>Final Year Undergraduate at IIT Kanpur</h3>
+        <p>Passionate about web development & software engineering</p>
+        <img src="img/your-photo.jpg" alt="Aman Kumar" class="profile-img">
+        <a href="mailto:k.amanknp@gmail.com" class="btn">Hire Me</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="padding: 60px 20px; text-align: center;">
+        <h2>About Me</h2>
+        <p style="font-size: 1.2em; margin-top: 20px;">I am a passionate web developer currently working on full-stack web applications and software projects. I enjoy solving complex problems and building scalable solutions.</p>
+        <a href="https://drive.google.com/file/d/1OYfU8n-ZS998aU2dnzjONFU-g3C_4EeW/view?usp=drive_link" class="btn">Download CV</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 60px 20px; background-color: #f4f4f4; text-align: center;">
+        <h2>Contact Me</h2>
+        <p>If you'd like to discuss a project or hire me, feel free to reach out!</p>
+        <a href="mailto:k.amanknp@gmail.com" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Aman Kumar. All Rights Reserved.</p>
+    </div>
+
+    <!-- Mode Toggle Script -->
+    <script>
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        // Check for the saved theme in localStorage
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            modeToggle.innerHTML = '☀️';  // Sun icon for light mode
+        } else {
+            body.classList.remove('light-mode');
+            modeToggle.innerHTML = '🌙';  // Moon icon for dark mode
+        }
+
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                modeToggle.innerHTML = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                modeToggle.innerHTML = '🌙';
+            }
+        });
+    </script>
+
+</body>
+</html>
